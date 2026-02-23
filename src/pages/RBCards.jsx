@@ -38,34 +38,28 @@ const RBCards = () => {
             <Row>
                 {products.map((item) => (
                     <Col md={4} key={item.id} className="mb-4">
-                        <Card className="h-100 shadow-sm">
+                        <Card className="h-100 card-custom">
                             <Card.Img
                                 variant="top"
                                 src={item.image}
-                                style={{ height: "250px", objectFit: "contain" }}
+                                className="ratio ratio-1x1"
                             />
                             <Card.Body>
                                 <Card.Title>{item.title}</Card.Title>
-                                <Card.Text>{item.description}</Card.Text>
+                                <Card.Text className="text-secondary small">{item.description}</Card.Text>
 
                                 <h6>
                                     {item.price}{" "}
-                                    <span
-                                        style={{
-                                            textDecoration: "line-through",
-                                            color: "gray",
-                                            marginLeft: "10px",
-                                        }}
-                                    >
+                                    <span className="strike-through">
                                         {item.oldPrice}
                                     </span>
                                 </h6>
 
-                                <div className="d-flex justify-content-between mt-3">
-                                    <Button variant="outline-primary">
+                                <div className="d-flex gap-2 mt-3">
+                                    <Button variant="outline-primary" className="flex-grow-1 btn-custom">
                                         Add To Cart
                                     </Button>
-                                    <Button variant="primary">Buy Now</Button>
+                                    <Button variant="primary" className="flex-grow-1 btn-custom">Buy Now</Button>
                                 </div>
                             </Card.Body>
                         </Card>

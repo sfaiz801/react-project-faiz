@@ -14,18 +14,9 @@ const RBNavbar = () => {
         <>
             <Navbar bg="white" expand="lg" className="border-bottom shadow-sm px-3 py-2">
                 <Container fluid>
-                    {/* Brand Logo */}
                     <Navbar.Brand
                         href="#"
-                        className="d-flex align-items-center justify-content-center text-white fw-bold me-4"
-                        style={{
-                            backgroundColor: "#111",
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "6px",
-                            fontSize: "15px",
-                            textDecoration: "none",
-                        }}
+                        className="d-flex align-items-center justify-content-center text-white navbar-brand-logo"
                     >
                         RB
                     </Navbar.Brand>
@@ -48,19 +39,10 @@ const RBNavbar = () => {
                             </NavDropdown>
                         </Nav>
 
-                        {/* Right Buttons */}
                         <div className="d-flex align-items-center gap-2 mt-2 mt-lg-0">
-                            <Button variant="primary" style={{ borderRadius: "6px", fontWeight: 500, minWidth: "75px" }}>
-                                Login
-                            </Button>
-                            <Button variant="outline-primary" style={{ borderRadius: "6px", fontWeight: 500, minWidth: "75px" }}>
-                                Sign Up
-                            </Button>
-                            <Button
-                                variant="dark"
-                                style={{ borderRadius: "6px", fontWeight: 500, minWidth: "85px" }}
-                                onClick={() => setShowContact(true)}
-                            >
+                            <Button variant="primary" className="navbar-btn">Login</Button>
+                            <Button variant="outline-primary" className="navbar-btn">Sign Up</Button>
+                            <Button variant="dark" className="navbar-btn-contact" onClick={() => setShowContact(true)}>
                                 Contact
                             </Button>
                         </div>
@@ -68,51 +50,38 @@ const RBNavbar = () => {
                 </Container>
             </Navbar>
 
-            {/* Offcanvas — Contact Panel */}
-            <Offcanvas
-                show={showContact}
-                onHide={() => setShowContact(false)}
-                placement="end"
-                style={{ width: "320px" }}
-            >
-                <Offcanvas.Header closeButton style={{ borderBottom: "1px solid #e5e7eb" }}>
-                    <Offcanvas.Title style={{ fontSize: "16px", fontWeight: 600, color: "#555" }}>
-                        Contact Us
-                    </Offcanvas.Title>
+            <Offcanvas show={showContact} onHide={() => setShowContact(false)} placement="end" className="offcanvas-custom">
+                <Offcanvas.Header closeButton className="offcanvas-header-custom">
+                    <Offcanvas.Title className="offcanvas-title-custom">Contact Us</Offcanvas.Title>
                 </Offcanvas.Header>
 
-                <Offcanvas.Body style={{ padding: "24px" }}>
-                    <h5 className="fw-bold mb-4" style={{ fontSize: "22px" }}>
-                        We are here to help you!
-                    </h5>
+                <Offcanvas.Body className="p-4">
+                    <h5 className="fw-bold mb-4 contact-heading">We are here to help you!</h5>
 
                     <hr className="mb-4" />
 
-                    <p className="fw-semibold mb-3" style={{ fontSize: "16px" }}>Indixpert</p>
+                    <p className="fw-semibold mb-3">Indixpert</p>
 
-                    {/* Offices */}
                     <div className="mb-4">
-                        <p className="d-flex align-items-center gap-2 mb-1 fw-medium text-secondary" style={{ fontSize: "14px" }}>
-                            <GlobeAmericas size={14} /> Our Offices :
+                        <p className="d-flex align-items-center gap-2 mb-2 fw-medium text-secondary contact-label">
+                            <GlobeAmericas size={14} /> Our Offices
                         </p>
-                        <p className="mb-0 ms-4" style={{ fontSize: "13px", color: "#333" }}>1: Hyderabad, Telangana, India</p>
-                        <p className="mb-0 ms-4" style={{ fontSize: "13px", color: "#333" }}>2: Gurugram, Haryana, India</p>
+                        <p className="mb-1 ms-4 contact-text">1: Hyderabad, Telangana, India</p>
+                        <p className="mb-0 ms-4 contact-text">2: Gurugram, Haryana, India</p>
                     </div>
 
-                    {/* Email */}
                     <div className="mb-4">
-                        <p className="d-flex align-items-center gap-2 mb-1 fw-medium text-secondary" style={{ fontSize: "14px" }}>
+                        <p className="d-flex align-items-center gap-2 mb-2 fw-medium text-secondary contact-label">
                             <EnvelopeFill size={13} /> Email
                         </p>
-                        <p className="mb-0 ms-4" style={{ fontSize: "13px", color: "#333" }}>contact@indixpert.com</p>
+                        <p className="mb-0 ms-4 contact-text">contact@indixpert.com</p>
                     </div>
 
-                    {/* Phone */}
                     <div className="mb-4">
-                        <p className="d-flex align-items-center gap-2 mb-1 fw-medium text-secondary" style={{ fontSize: "14px" }}>
+                        <p className="d-flex align-items-center gap-2 mb-2 fw-medium text-secondary contact-label">
                             <TelephoneFill size={13} /> Phone
                         </p>
-                        <p className="mb-0 ms-4" style={{ fontSize: "13px", color: "#333" }}>(+91) 778 899 2897</p>
+                        <p className="mb-0 ms-4 contact-text">(+91) 778 899 2897</p>
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

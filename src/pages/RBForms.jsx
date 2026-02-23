@@ -102,11 +102,11 @@ const RBForms = () => {
     // ── Success Screen ─────────────────────────────────────────
     if (submitted) {
         return (
-            <Container className="mt-4" style={{ maxWidth: "700px" }}>
+            <Container>
                 <div className="text-center py-5">
                     <h3 className="text-success fw-bold">✅ Form Submitted!</h3>
                     <p className="text-secondary">Thank you, {formData.firstName} {formData.lastName}!</p>
-                    <Button variant="primary" onClick={() => {
+                    <Button variant="primary" className="btn-custom" onClick={() => {
                         setSubmitted(false); setFormData({
                             firstName: "", lastName: "", phone: "", email: "",
                             country: "", state: "", city: "", zip: "",
@@ -121,7 +121,7 @@ const RBForms = () => {
     }
 
     return (
-        <Container className="mt-4" style={{ maxWidth: "700px" }}>
+        <Container>
             <h5 className="fw-bold mb-4">Registration Details</h5>
 
             <Form onSubmit={handleSubmit} noValidate>
@@ -281,7 +281,7 @@ const RBForms = () => {
                             <Form.Check type="radio" name="sex" label="Male" id="male" value="Male" onChange={handleChange} />
                             <Form.Check type="radio" name="sex" label="Female" id="female" value="Female" onChange={handleChange} />
                         </div>
-                        {errors.sex && <div className="text-danger" style={{ fontSize: "0.875em" }}>{errors.sex}</div>}
+                        {errors.sex && <div className="text-danger small">{errors.sex}</div>}
                     </Col>
                     <Col md={6}>
                         <Form.Label>Hobbies <span className="text-danger">*</span></Form.Label>
@@ -290,7 +290,7 @@ const RBForms = () => {
                             <Form.Check type="checkbox" name="hobbies" label="Singing" id="singing" value="Singing" onChange={handleChange} />
                             <Form.Check type="checkbox" name="hobbies" label="Dancing" id="dancing" value="Dancing" onChange={handleChange} />
                         </div>
-                        {errors.hobbies && <div className="text-danger" style={{ fontSize: "0.875em" }}>{errors.hobbies}</div>}
+                        {errors.hobbies && <div className="text-danger small">{errors.hobbies}</div>}
                     </Col>
                 </Row>
 
@@ -326,7 +326,7 @@ const RBForms = () => {
                     </Col>
                 </Row>
 
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" className="btn-custom">
                     Submit form
                 </Button>
 

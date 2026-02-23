@@ -10,7 +10,7 @@ import {
 
 // ─── Shared Dropdown Menu Items ───────────────────────────────────────────────
 const ProfileMenu = () => (
-    <Dropdown.Menu style={{ minWidth: "200px", padding: "8px 0", borderRadius: "10px", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }}>
+    <Dropdown.Menu className="dropdown-menu-custom">
         <Dropdown.Item href="#dashboard" className="d-flex align-items-center gap-2 py-2 px-3">
             <Speedometer2 size={16} /> Dashboard
         </Dropdown.Item>
@@ -32,8 +32,7 @@ const FilledDropdown = () => (
         <Dropdown.Toggle
             variant="primary"
             id="filled-dropdown"
-            className="d-flex align-items-center gap-2"
-            style={{ borderRadius: "8px", padding: "8px 16px", fontWeight: 500 }}
+            className="d-flex align-items-center gap-2 btn-custom"
         >
             <PersonCircle size={18} />
             Profile
@@ -48,8 +47,7 @@ const OutlinedDropdown = () => (
         <Dropdown.Toggle
             variant="outline-primary"
             id="outlined-dropdown"
-            className="d-flex align-items-center gap-2"
-            style={{ borderRadius: "8px", padding: "8px 16px", fontWeight: 500 }}
+            className="d-flex align-items-center gap-2 btn-custom"
         >
             <PersonCircle size={18} />
             Profile
@@ -65,20 +63,16 @@ const AvatarDropdown = () => (
         <Dropdown.Toggle
             as="div"
             id="avatar-dropdown"
-            style={{ cursor: "pointer", display: "inline-block" }}
-            bsPrefix="custom-toggle" // removes default caret
+            bsPrefix="custom-toggle"
+            className="cursor-pointer"
         >
             <img
                 src="https://api.dicebear.com/7.x/adventurer/svg?seed=Felix&backgroundColor=b91c1c"
                 alt="avatar"
-                style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "50%",
-                    border: "2px solid #dc3545",
-                    backgroundColor: "#dc3545",
-                    objectFit: "cover",
-                }}
+                className="rounded-circle"
+                width={44}
+                height={44}
+                style={{ border: "2px solid #dc3545", objectFit: "cover" }}
             />
         </Dropdown.Toggle>
         <ProfileMenu />

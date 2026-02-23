@@ -18,48 +18,25 @@ const SubscribeModal = () => {
     };
 
     return (
-        <div
-            style={{
-                backgroundColor: "#808080",
-                minHeight: "100vh",
-                padding: "20px",
-            }}
-        >
+        <div className="bg-secondary min-vh-100 p-4">
             {/* Subscribe Button */}
             <Button
                 variant="primary"
                 onClick={handleShow}
-                className="d-flex align-items-center gap-2"
-                style={{
-                    backgroundColor: "#1a3a6b",
-                    border: "none",
-                    borderRadius: "6px",
-                    fontWeight: 500,
-                }}
+                className="d-flex align-items-center gap-2 btn-custom"
             >
                 <EnvelopeFill size={15} />
                 Subscribe
             </Button>
 
             {/* Modal */}
-            <Modal
-                show={show}
-                onHide={handleClose}
-                centered
-                backdrop="static"
-                style={{ backdropFilter: "none" }}
-            >
-                <Modal.Header
-                    closeButton
-                    style={{ borderBottom: "1px solid #e5e7eb", paddingBottom: "12px" }}
-                >
-                    <Modal.Title style={{ fontSize: "22px", fontWeight: 700, color: "#111" }}>
-                        Don't miss out
-                    </Modal.Title>
+            <Modal show={show} onHide={handleClose} centered backdrop="static">
+                <Modal.Header closeButton className="border-bottom border-light">
+                    <Modal.Title className="fw-bold">Don't miss out</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body style={{ paddingTop: "16px", paddingBottom: "24px" }}>
-                    <p style={{ color: "#444", fontSize: "14px", marginBottom: "16px" }}>
+                <Modal.Body className="py-4">
+                    <p className="text-secondary mb-4">
                         Signup for our newsletter to stay upto date.
                     </p>
 
@@ -70,22 +47,10 @@ const SubscribeModal = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
-                            style={{
-                                borderRadius: "6px 0 0 6px",
-                                fontSize: "14px",
-                                color: "#555",
-                            }}
                         />
                         <Button
                             variant="outline-secondary"
                             onClick={handleSubscribe}
-                            style={{
-                                borderRadius: "0 6px 6px 0",
-                                fontSize: "14px",
-                                fontWeight: 500,
-                                color: "#333",
-                                borderColor: "#ced4da",
-                            }}
                         >
                             Subscribe
                         </Button>

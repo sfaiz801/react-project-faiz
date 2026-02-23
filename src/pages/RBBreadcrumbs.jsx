@@ -20,10 +20,7 @@ const FileBreadcrumb = () => {
                     active
                     className="d-flex align-items-center gap-1"
                 >
-                    <span
-                        className="d-inline-flex align-items-center justify-content-center border border-primary rounded"
-                        style={{ width: "22px", height: "22px" }}
-                    >
+                    <span className="d-inline-flex align-items-center justify-content-center border border-primary rounded btn-rounded">
                         <Code className="text-primary" size={14} />
                     </span>
                     TodoList
